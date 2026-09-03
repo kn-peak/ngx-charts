@@ -2,6 +2,11 @@
 
 ## HEAD (unreleased)
 
+## 25.0.2
+
+- Fix: SSR issues stemming from Angular update
+- Fix: Horizontal variant Y-axis labels were cut off, extended available characters for SSR
+
 ## 25.0.1
 
 - Chore: Sync 25.x release with master (includes maintenance fixes already present on git that were missing from the original npm 25.0.0 publish)
