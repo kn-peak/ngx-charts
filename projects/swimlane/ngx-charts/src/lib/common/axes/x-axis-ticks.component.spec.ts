@@ -100,4 +100,12 @@ describe('XAxisTicksComponent rotation', () => {
     renderAt(W_BIG);
     expect(component.verticalSpacing).toBe(20);
   });
+
+  it('resets the kept rotation when rotateTicks is turned off and on again', () => {
+    [W_BIG, W_SMALL, W_BIG, W_SMALL].forEach(width => renderAt(width));
+
+    renderAt(W_BIG, { rotateTicks: false });
+
+    expect(renderAt(W_BIG, { rotateTicks: true })).toBe('');
+  });
 });

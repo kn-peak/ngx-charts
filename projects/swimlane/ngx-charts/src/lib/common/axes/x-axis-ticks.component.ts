@@ -231,6 +231,12 @@ export class XAxisTicksComponent implements OnChanges, AfterViewInit {
       };
     }
 
+    if (!this.rotateTicks) {
+      // Turning rotation off leaves the layout stabilization in whatever state it was in; clear it so
+      // the next time rotation is turned on it starts a fresh layout instead of clamping to a stale angle.
+      this.rotationLayoutKey = undefined;
+    }
+
     const angle = this.rotateTicks ? this.getRotationAngle(this.ticks) : null;
 
     this.textTransform = '';
